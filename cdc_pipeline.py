@@ -45,7 +45,7 @@ def get_watermark():
         WHERE table_name = 'patient'
     """)
     row = cursor.fetchone()
-    return row[0] if row else "2026-01-01 00:00:00"
+    return row[0] if row else "2020-01-01 00:00:00"
 
 
 def update_watermark(new_time):
