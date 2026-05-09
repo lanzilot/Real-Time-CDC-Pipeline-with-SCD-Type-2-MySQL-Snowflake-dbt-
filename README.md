@@ -84,11 +84,6 @@ ALTER WAREHOUSE COMPUTE_WH RESUME;
 ALTER WAREHOUSE COMPUTE_WH SET AUTO_SUSPEND = 300;
 ALTER WAREHOUSE COMPUTE_WH RESUME;
 
-
-CREATE SCHEMA IF NOT EXISTS hospital_pipeline.bronze;
-CREATE SCHEMA IF NOT EXISTS hospital_pipeline.silver;
-CREATE SCHEMA IF NOT EXISTS hospital_pipeline.gold;
-
 CREATE TABLE IF NOT EXISTS hospital_pipeline.bronze.cdc_watermark (
     table_name STRING,
     last_updated TIMESTAMP
@@ -121,15 +116,5 @@ CREATE OR REPLACE TABLE hospital_pipeline.bronze.patients_stage (
     age INTEGER,
     sex STRING,
     updated_at TIMESTAMP
-);
-
-CREATE OR REPLACE TABLE hospital_pipeline.silver.patients_scd (
-    patient_id INTEGER,
-    name STRING,
-    age INTEGER,
-    sex STRING,
-    start_date TIMESTAMP,
-    end_date TIMESTAMP,
-    is_current BOOLEAN
 );
 
