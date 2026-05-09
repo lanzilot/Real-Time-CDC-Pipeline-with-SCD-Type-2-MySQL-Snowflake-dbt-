@@ -42,7 +42,7 @@ sql/ → Snowflake table creation and SCD logic
 dbt/ → transformation models
 docs/ → architecture and pipeline explanation
 
-## Sample Query
+## Snowflake SQL
 CREATE DATABASE hospital_pipeline;
 
 USE DATABASE hospital_pipeline;
